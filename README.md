@@ -1,4 +1,4 @@
-# RDSim: Robo Delivery Simulator
+# Autonomous Delivery Robot
 
 ### [Project Page](https://auturbo.github.io/RDSim) | [Video](https://www.youtube.com/watch?si=KmcLMo9WP7M93-m2&v=LW87tunwvLI&feature=youtu.be)
 
