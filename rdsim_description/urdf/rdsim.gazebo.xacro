@@ -9,7 +9,7 @@
     <material>Gazebo/Grey</material>
   </gazebo>
 
-<!-- wheel -->
+
   <gazebo reference="wheel_left_link">
     <mu1>10000000</mu1>
     <mu2>10000000</mu2>
@@ -32,7 +32,7 @@
     <material>Gazebo/FlatBlack</material>
   </gazebo>
 
-<!-- caster -->
+
   <gazebo reference="caster_link">
     <mu1>0.1</mu1>
     <mu2>0.1</mu2>
@@ -43,13 +43,13 @@
     <material>Gazebo/FlatBlack</material>
   </gazebo>
 
-<!-- imu -->
+
   <gazebo reference="imu_link">
     <material>Gazebo/Yellow</material>
     <sensor name="imu_sensor" type="imu">
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
         <ros>
-          <!-- <namespace>/demo</namespace> -->
+          
           <remapping>~/out:=imu</remapping>
         </ros>
         <initial_orientation_as_reference>true</initial_orientation_as_reference>
@@ -114,7 +114,7 @@
     </sensor>
   </gazebo>
 
-<!-- differential type config -->
+
   <gazebo>
     <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
       <ros>
@@ -214,18 +214,18 @@
     <sensor type="ray" name="sensor">
       <pose>0 0 0 0 0 0</pose>
       <always_on>false</always_on>
-      <update_rate>10.0</update_rate> <!-- 업데이트 속도 줄임 -->
-      <visualize>false</visualize> <!-- 비주얼라이제이션 비활성화 -->
+      <update_rate>10.0</update_rate> 
+      <visualize>false</visualize> 
       <ray>
         <scan>
           <horizontal>
-            <samples>360</samples> <!-- 가로 샘플 수 줄임 -->
+            <samples>360</samples> 
             <resolution>1</resolution>
             <min_angle>-3.14159</min_angle>
             <max_angle>3.14159</max_angle>
           </horizontal>
           <vertical>
-            <samples>32</samples> <!-- 수직 샘플 수 줄임 -->
+            <samples>32</samples> 
             <resolution>1</resolution>
             <min_angle>-0.561799</min_angle>
             <max_angle>0.561799</max_angle>
@@ -233,10 +233,10 @@
         </scan>
         <range>
           <min>0.30</min>
-          <max>50.0</max> <!-- 범위 줄임 -->
+          <max>50.0</max> 
           <resolution>0.01</resolution>
         </range>
-        <!-- 소음 설정 제거 -->
+        
       </ray>
       <plugin name="gazebo_ros_ray_sensor" filename="libgazebo_ros_ray_sensor.so">
         <ros>
@@ -250,7 +250,7 @@
   </gazebo>
 
 
-  <!-- GPS -->
+  
   <gazebo reference="gps_link">
     <sensor name="gps_sensor" type="gps">
       <plugin filename="libgazebo_ros_gps_sensor.so" name="gps_plugin">
@@ -260,7 +260,7 @@
         </ros>
         <output_type>sensor_msgs/NavSatFix</output_type>
         <frame_name>gps_link</frame_name>
-        <!-- 임의의 위도, 경도 값 설정 -->
+        
         <latitude_deg>37.466</latitude_deg>
         <longitude_deg>126.932</longitude_deg>
         <altitude>0.0</altitude>
@@ -270,8 +270,8 @@
       <gps>
         <position_sensing>
           <noise type="gaussian">
-            <mean>0.0</mean> <!-- 기본적으로 노이즈가 없는 설정 -->
-            <stddev>0.0</stddev> <!-- 노이즈 표준편차 설정 -->
+            <mean>0.0</mean> 
+            <stddev>0.0</stddev> 
           </noise>
         </position_sensing>
       </gps>
@@ -279,9 +279,9 @@
   </gazebo>
 
 
-<!-- 카메라 플러그인 추가 -->
 
-<!-- Front-right camera -->
+
+
 <gazebo reference="camera_front_right_link">
   <sensor type="camera" name="camera_front_right_sensor">
     <visualize>${camera_visual}</visualize>
@@ -309,7 +309,7 @@
   </sensor>
 </gazebo>
 
-<!-- Front-left camera -->
+
 <gazebo reference="camera_front_left_link">
   <sensor type="camera" name="camera_front_left_sensor">
     <visualize>${camera_visual}</visualize>
@@ -337,7 +337,7 @@
   </sensor>
 </gazebo>
 
-<!-- Back-right camera -->
+
 <gazebo reference="camera_back_right_link">
   <sensor type="camera" name="camera_back_right_sensor">
     <visualize>${camera_visual}</visualize>
@@ -365,7 +365,7 @@
   </sensor>
 </gazebo>
 
-<!-- Back-left camera -->
+
 <gazebo reference="camera_back_left_link">
   <sensor type="camera" name="camera_back_left_sensor">
     <visualize>${camera_visual}</visualize>
@@ -393,7 +393,7 @@
   </sensor>
 </gazebo>
 
-<!-- camera_top_link -->
+
 <gazebo reference="camera_top_link">
   <sensor type="camera" name="camera_top_sensor">
     <visualize>${camera_visual}</visualize>

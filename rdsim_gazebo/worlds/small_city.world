@@ -34,10 +34,7 @@
     </physics>
 
     <spherical_coordinates>
-      <!-- currently gazebo has a bug: instead of outputing lat, long, altitude in ENU
-      (x = East, y = North and z = Up) as the default configurations, it's outputting (-E)(-N)U,
-      therefore we rotate the default frame 180 so that it would go back to ENU
-      see: https://github.com/osrf/gazebo/issues/2022 -->
+      
       <surface_model>EARTH_WGS84</surface_model>
       <latitude_deg>38.161479</latitude_deg>
       <longitude_deg>-122.454630</longitude_deg>
@@ -45,7 +42,7 @@
       <heading_deg>180</heading_deg>
     </spherical_coordinates>
 
-    <!-- A global light source -->
+    
     <light type="directional" name="sun">
       <pose>0 0 1000 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
@@ -60,7 +57,7 @@
       <direction>-0.5 0.1 -0.4</direction>
     </light>
 
-    <!-- ground plane -->
+    
     <model name="ground_plane">
       <static>true</static>
       <link name="link">
@@ -83,7 +80,7 @@
       </link>
     </model>
 
-    <!-- Environment -->
+    
     <include>
       <name>city_terrain_1</name>
       <pose>
@@ -225,9 +222,9 @@
 
 
 
-    <!-- Sidewalks -->
+    
 
-      <!-- East -->
+      
       <model name="sidewalk_3">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -300,7 +297,7 @@
   </link>
 </model>
 
-      <!-- West -->
+      
 
         <model name="sidewalk_4">
   <static>true</static>
@@ -376,7 +373,7 @@
 
 
 
-      <!-- South -->
+      
 
         <model name="sidewalk_5">
   <static>true</static>
@@ -452,7 +449,7 @@
 
 
 
-      <!-- North -->
+      
       <model name="sidewalk_6">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -526,7 +523,7 @@
 </model>
 
 
-      <!-- East -->
+      
       <model name="sidewalk_7">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -599,7 +596,7 @@
   </link>
 </model>
 
-      <!-- West -->
+      
 
         <model name="sidewalk_8">
   <static>true</static>
@@ -675,7 +672,7 @@
 
 
 
-      <!-- South -->
+      
 
         <model name="sidewalk_9">
   <static>true</static>
@@ -751,7 +748,7 @@
 
 
 
-      <!-- North -->
+      
       <model name="sidewalk_10">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -825,7 +822,7 @@
 </model>
 
 
-      <!-- East -->
+      
       <model name="sidewalk_11">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -898,7 +895,7 @@
   </link>
 </model>
 
-      <!-- West -->
+      
 
         <model name="sidewalk_12">
   <static>true</static>
@@ -974,7 +971,7 @@
 
 
 
-      <!-- South -->
+      
 
         <model name="sidewalk_13">
   <static>true</static>
@@ -1122,7 +1119,7 @@
 
 
 
-      <!-- North -->
+      
       <model name="sidewalk_15">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -1196,7 +1193,7 @@
 </model>
 
 
-      <!-- East -->
+      
       <model name="sidewalk_16">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -1269,7 +1266,7 @@
   </link>
 </model>
 
-      <!-- West -->
+      
 
         <model name="sidewalk_17">
   <static>true</static>
@@ -1345,7 +1342,7 @@
 
 
 
-      <!-- South -->
+      
 
         <model name="sidewalk_18">
   <static>true</static>
@@ -1421,7 +1418,7 @@
 
 
 
-      <!-- North -->
+      
       <model name="sidewalk_19">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -1495,7 +1492,7 @@
 </model>
 
 
-      <!-- East -->
+      
       <model name="sidewalk_20">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -1568,7 +1565,7 @@
   </link>
 </model>
 
-      <!-- West -->
+      
 
         <model name="sidewalk_21">
   <static>true</static>
@@ -1716,7 +1713,7 @@
 
 
 
-      <!-- South -->
+      
 
         <model name="sidewalk_23">
   <static>true</static>
@@ -1792,7 +1789,7 @@
 
 
 
-      <!-- North -->
+      
       <model name="sidewalk_24">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -1866,7 +1863,7 @@
 </model>
 
 
-      <!-- East -->
+      
       <model name="sidewalk_25">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -1939,7 +1936,7 @@
   </link>
 </model>
 
-      <!-- West -->
+      
 
         <model name="sidewalk_26">
   <static>true</static>
@@ -2015,7 +2012,7 @@
 
 
 
-      <!-- South -->
+      
 
         <model name="sidewalk_27">
   <static>true</static>
@@ -2091,7 +2088,7 @@
 
 
 
-      <!-- North -->
+      
       <model name="sidewalk_28">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -2744,7 +2741,7 @@
 
 
 
-    <!-- North sidewalk -->
+    
     <model name="sidewalk_37">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -2818,52 +2815,9 @@
 </model>
 
 
-    <!-- South sidewalk
-         Commented out because it leaks beyond the heightmap and intersects bridges
-    <model name="sidewalk_38">
-  <static>true</static>
-  <pose>0 0 0 0 0 0</pose>
-  <link name="link">
-    <visual name="visual">
-      <geometry>
-        <polyline>
-          <height>0.15</height>
-          <point>-51.7 -51.2</point>
-          <point>-51.67552825814758 -51.354508497187474</point>
-          <point>-51.604508497187474 -51.49389262614624</point>
-          <point>-51.49389262614624 -51.604508497187474</point>
-          <point>-51.354508497187474 -51.67552825814758</point>
-          <point>-51.2 -51.7</point>
-          <point>-49.2 -51.7</point>
-          <point>-49.04549150281253 -51.67552825814758</point>
-          <point>-48.906107373853764 -51.604508497187474</point>
-          <point>-48.79549150281253 -51.49389262614624</point>
-          <point>-48.724471741852426 -51.354508497187474</point>
-          <point>-48.7 -51.2</point>
-          <point>-48.7 51.2</point>
-          <point>-48.724471741852426 51.354508497187474</point>
-          <point>-48.79549150281253 51.49389262614624</point>
-          <point>-48.906107373853764 51.604508497187474</point>
-          <point>-49.04549150281253 51.67552825814758</point>
-          <point>-49.2 51.7</point>
-          <point>-51.2 51.7</point>
-          <point>-51.354508497187474 51.67552825814758</point>
-          <point>-51.49389262614624 51.604508497187474</point>
-          <point>-51.604508497187474 51.49389262614624</point>
-          <point>-51.67552825814758 51.354508497187474</point>
-          <point>-51.7 51.2</point>
-        </polyline>
-      </geometry>
-      <material>
-        <ambient>0.2 0.2 0.2 1.0</ambient>
-      </material>
-    </visual>
-  </link>
-</model>
+    
 
-     -->
-
-    <!-- East sidewalk -->
+    
     <model name="sidewalk_39">
   <static>true</static>
   <pose>0 0 0 0 0 0</pose>
@@ -2937,54 +2891,11 @@
 </model>
 
 
-    <!-- West sidewalk
-         Commented out because it leaks beyond the heightmap
-    <model name="sidewalk_40">
-  <static>true</static>
-  <pose>0 0 0 0 0 0</pose>
-  <link name="link">
-    <visual name="visual">
-      <geometry>
-        <polyline>
-          <height>0.15</height>
-          <point>-51.7 49.2</point>
-          <point>-51.67552825814758 49.04549150281253</point>
-          <point>-51.604508497187474 48.906107373853764</point>
-          <point>-51.49389262614624 48.79549150281253</point>
-          <point>-51.354508497187474 48.724471741852426</point>
-          <point>-51.2 48.7</point>
-          <point>126.2 48.7</point>
-          <point>126.35450849718748 48.724471741852426</point>
-          <point>126.49389262614623 48.79549150281253</point>
-          <point>126.60450849718748 48.906107373853764</point>
-          <point>126.67552825814758 49.04549150281253</point>
-          <point>126.7 49.2</point>
-          <point>126.7 51.2</point>
-          <point>126.67552825814758 51.354508497187474</point>
-          <point>126.60450849718748 51.49389262614624</point>
-          <point>126.49389262614623 51.604508497187474</point>
-          <point>126.35450849718748 51.67552825814758</point>
-          <point>126.2 51.7</point>
-          <point>-51.2 51.7</point>
-          <point>-51.354508497187474 51.67552825814758</point>
-          <point>-51.49389262614624 51.604508497187474</point>
-          <point>-51.604508497187474 51.49389262614624</point>
-          <point>-51.67552825814758 51.354508497187474</point>
-          <point>-51.7 51.2</point>
-        </polyline>
-      </geometry>
-      <material>
-        <ambient>0.2 0.2 0.2 1.0</ambient>
-      </material>
-    </visual>
-  </link>
-</model>
+    
 
-     -->
+    
 
-    <!-- Buildings -->
-
-    <!-- North block -->
+    
 
     <include>
       <name>fountain_41</name>
@@ -2998,19 +2909,7 @@
       </pose>
       <uri>model://fountain</uri>
     </include>
-<!--
-    <include>
-      <name>gazebo_42</name>
-      <pose>
-      135.5
-      0
-      0.0
-      0
-      0
-      3.14
-      </pose>
-      <uri>model://gazebo</uri>
-    </include> -->
+
 
     <include>
       <name>pier_43</name>
@@ -3183,7 +3082,7 @@
     </include>
 
 
-    <!-- North road -->
+    
 
 
         <include>
@@ -3329,9 +3228,9 @@
 
 
 
-    <!-- Block 0 0 -->
+    
 
-    <!-- Block 0 1 -->
+    
 
     <include>
       <name>house_1_66</name>
@@ -3425,7 +3324,7 @@
     </include>
 
 
-    <!-- Block 0 2 -->
+    
 
     <model name="gas_station_73">
   <static>true</static>
@@ -3584,11 +3483,11 @@
     </include>
 
 
-    <!-- Block 0 3 -->
+    
 
-    <!-- Block 1 0 -->
+    
 
-    <!-- Block 1 1 -->
+    
 
     <include>
       <name>law_office_82</name>
@@ -3734,7 +3633,7 @@
     </include>
 
 
-    <!-- Block 1 2 -->
+    
 
     <include>
       <name>fast_food_93</name>
@@ -4048,11 +3947,11 @@
 
 
 
-    <!-- Block 1 3 -->
+    
 
-    <!-- Block 2 0 -->
+    
 
-    <!-- Block 2 1 -->
+    
 
     <include>
       <name>post_office_143</name>
@@ -4186,7 +4085,7 @@
 
 
 
-    <!-- Block 2 2 -->
+    
 
     <include>
       <name>salon_154</name>
@@ -4358,16 +4257,16 @@
     </include>
 
 
-    <!-- Block 2 3 -->
+    
 
-    <!-- West block -->
+    
 
-    <!-- East block -->
+    
 
 
-    <!-- Construction zone -->
+    
 
-    <!-- South island -->
+    
 
     <include>
       <name>truss_bridge_167</name>
@@ -4409,7 +4308,7 @@
       </material>
     </road>
 
-    <!-- Stop lights -->
+    
 
     <include>
       <name>stop_light_post_169</name>
@@ -4594,7 +4493,7 @@
     </include>
 
 
-    <!-- Stop signs -->
+    
 
     <include>
       <name>stop_sign_183</name>
@@ -4675,7 +4574,7 @@
     </include>
 
 
-    <!-- Street lights -->
+    
 
 
     <include>
@@ -4813,7 +4712,7 @@
     </include>
 
 
-    <!-- Telephone poles -->
+    
 
 
             <include>
@@ -5386,7 +5285,7 @@
 
 
 
-    <!-- Parallel-parked cars -->
+    
 
 
           <include>

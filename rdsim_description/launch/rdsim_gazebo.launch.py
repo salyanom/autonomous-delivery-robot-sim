@@ -10,11 +10,11 @@ from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
-# from ament_index_python.packages import get_package_share_directory
+                                                                     
 from launch.actions import SetEnvironmentVariable
 from launch_ros.descriptions import ParameterValue
 
-# from ament_index_python.packages import get_package_share_directory
+                                                                     
 from launch.actions import SetEnvironmentVariable
 import os
 
@@ -22,7 +22,7 @@ from scripts import GazeboRosPaths
 
 
 def generate_launch_description():
-    # 환경 변수 설정
+              
     model, plugin, media = GazeboRosPaths.get_paths()
 
     gazebo_model_path = os.getenv("GAZEBO_MODEL_PATH", "")
@@ -38,15 +38,15 @@ def generate_launch_description():
         f"{gazebo_resource_path}:{media}" if gazebo_resource_path else media
     )
 
-    # GAZEBO_MODEL_PATH 환경 변수 설정
+                                
     set_gazebo_model_path = SetEnvironmentVariable(
         name="GAZEBO_MODEL_PATH", value=combined_gazebo_model_path
     )
-    # GAZEBO_PLUGIN_PATH 환경 변수 설정
+                                 
     set_gazebo_plugin_path = SetEnvironmentVariable(
         name="GAZEBO_PLUGIN_PATH", value=plugin
     )
-    # GAZEBO_MODEL_PATH 환경 변수 설정
+                                
     set_gazebo_resource_path = SetEnvironmentVariable(
         name="GAZEBO_RESOURCE_PATH", value=combined_gazebo_resource_path
     )
@@ -55,21 +55,21 @@ def generate_launch_description():
     use_gazebo_gui = LaunchConfiguration("use_gazebo_gui", default="True")
     use_sim_time = LaunchConfiguration("use_sim_time", default="True")
 
-    # robot urdf 파일의 경로를 설정합니다.
+                               
     default_model_dir = PathJoinSubstitution(
         [FindPackageShare("rdsim_description"), "urdf", "rdsim.urdf.xacro"]
     )
 
-    # rviz 파일의 경로를 설정합니다.
+                         
     rviz_config_file = PathJoinSubstitution(
         [FindPackageShare("rdsim_description"), "rviz", "display.rviz"]
     )
-    # world 파일의 경로를 설정합니다.
+                          
     world_dir = PathJoinSubstitution(
         [FindPackageShare("rdsim_gazebo"), "worlds", "small_city.world"]
     )
 
-    # robot_state_publisher를 실행하는 노드를 설정합니다.
+                                            
 
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
@@ -84,7 +84,7 @@ def generate_launch_description():
         ],
     )
 
-    # joint_state_publisher를 실행하는 노드를 설정합니다.
+                                            
     joint_state_publisher_node = Node(
         package="joint_state_publisher",
         executable="joint_state_publisher",
@@ -99,16 +99,16 @@ def generate_launch_description():
         condition=launch.conditions.IfCondition(LaunchConfiguration("gui")),
     )
 
-    # rviz를 실행하는 노드를 설정합니다.
+                           
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
         arguments=["-d", rviz_config_file],
-        #output="screen",
+                         
         condition=IfCondition(start_rviz),
     )
 
-    # gazebo를 실행하여 월드를 불러옵니다.
+                             
     spawn_entity = Node(
         package="gazebo_ros",
         executable="spawn_entity.py",
@@ -132,7 +132,7 @@ def generate_launch_description():
             set_gazebo_model_path,
             set_gazebo_plugin_path,
             set_gazebo_resource_path,
-            # 런치 파일에 사용할 인자들을 정의합니다.
+                                    
             DeclareLaunchArgument(
                 "start_rviz", default_value="true", description="Whether execute rviz2"
             ),
@@ -161,7 +161,7 @@ def generate_launch_description():
                 default_value="True",
                 description="Flag to enable use_sim_time",
             ),
-            # gazebo를 실행합니다.
+                            
             launch.actions.ExecuteProcess(
                 cmd=[
                     "gazebo",
@@ -175,7 +175,7 @@ def generate_launch_description():
                 output="screen",
                 condition=IfCondition(use_gazebo_gui),
             ),
-            # gazebo를 실행합니다.
+                            
             launch.actions.ExecuteProcess(
                 cmd=[
                     "gzserver",
@@ -189,13 +189,13 @@ def generate_launch_description():
                 output="screen",
                 condition=UnlessCondition(use_gazebo_gui),
             ),
-            # 위에서 정의한 노드들을 실행합니다.
-            # 로봇의 상태를 퍼블리시하는 노드
-            # joint_state_publisher_node,
+                                 
+                               
+                                         
             robot_state_publisher_node,
-            # joint_state_publisher_gui_node,
-            # 로봇을 gazebo에 스폰하는 노드
+                                             
+                                 
             spawn_entity,
-            # rviz_node,
+                        
         ]
     )

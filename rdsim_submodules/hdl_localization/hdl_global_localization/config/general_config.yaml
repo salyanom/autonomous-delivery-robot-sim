@@ -1,0 +1,6 @@
+
+global_localization_engine: BBS
+
+
+globalmap_downsample_resolution: 0.5
+query_downsample_resolution: 0.5
